@@ -1,0 +1,23 @@
+extends base
+block vars
+ - var title = "Login"
+block scripts
+  link(rel="stylesheet" type="text/css" href="/stylesheets/login.css")
+block login
+ a(href="/" class="home") Home
+block content
+ div(class="objects")
+  form(action="/login" method="post")
+   table
+    tr
+     td
+      input(class="txtbox" type="email" name="email" required placeholder="email")
+    tr  
+     td
+      input(class="txtbox" type="password" name="password" required placeholder="password")
+    tr
+     td 
+      input(class="btn" type="submit" value = "Login")
+   if(error)
+    div(class="error") Error: #{error} 
+  

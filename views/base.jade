@@ -1,0 +1,17 @@
+block vars
+doctype html
+html
+ head
+  title #{title}
+  link(rel="stylesheet" type="text/css" href="/stylesheets/style.css")
+  block scripts
+ body
+  div(class="wrapper")
+   div(class="header")
+    div(class="adda") 
+     a(href="/") Adda
+      br 
+      span A Discussion Forum 
+    block login
+   div(class="content")
+    block content 

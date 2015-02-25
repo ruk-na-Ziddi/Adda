@@ -1,0 +1,24 @@
+extends base
+block vars
+ -var title =""
+block login
+ div(class="login_register")
+  a(href="/login")
+   div(class="login")
+    img(src="images/login.png" height="30%" width="30%")
+    br
+    | Login
+  a(href="/register")
+   div(class="register")
+    img(src="images/register1.png" height="30%" width="30%")
+    br
+    | Register
+block content
+ div(class="addaImage")
+  img(src="images/adda.jpg" width="80%" height="80%")
+ div(class="data")
+  h1 Latest Discussions:
+  ol
+   each t in topics
+    li #{t.name}
+    

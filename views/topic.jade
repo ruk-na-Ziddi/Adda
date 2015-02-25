@@ -1,0 +1,58 @@
+extends base
+block vars
+ -var title = "TOPIC"
+ -var allowComment = true 
+block scripts
+ link(rel="stylesheet" type="text/css" href="/stylesheets/topic.css")
+ script(type ="text/javascript" src ="/javascripts/jquery-1.11.1.min.js")
+ script(type ="text/javascript" src ="/javascripts/new_comment.js")
+ script(type ="text/javascript" src ="/javascripts/socket.io.js")
+block login
+ a(href="/dashboard" class="logout") Dashboard
+block content
+ br
+ div(class="topic")
+  b Name : 
+  i #{name}
+  br
+  b Started by : 
+  i #{admin}
+  br
+  b Start Time : 
+  i #{start_time}
+  br
+  if closed_time
+   b Close Time : 
+   i #{closed_time} 
+  p
+   b Description : 
+   i #{description}
+  if closed_time
+   -allowComment=false
+   b CLOSED
+  else 
+   div
+    if status.starter
+     button(onclick="window.location.href='/close/#{id}'") Close
+    else if status.participate
+     button(onclick="window.location.href='/leave/#{id}'") Leave
+    else
+     -allowComment =false
+     button(onclick="window.location.href='/join/#{id}'") Join
+ hr
+ div 
+  h3 Comments 
+  button(id="btn_loadComplete") Load Complete
+  ul(id="allComments")
+   each comment in comments
+    li
+     div
+      b #{comment.name}:
+      | #{comment.content}
+      br
+      |#{comment.time}
+    br  
+ if allowComment
+  div 
+   input(type="text" name="comment",id="cmt_box")
+   button(id="btn_comment") Comment

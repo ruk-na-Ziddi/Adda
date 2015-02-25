@@ -1,0 +1,17 @@
+
+.logout{
+	float: right;
+	padding-right: 2%;
+	font-size: 150%;
+	padding-top: 10%;
+}
+.topic{
+	font-size: 120%;
+}
+h3{
+	display: inline-block;
+	padding-right:2%; 
+}
+#btn_loadComplete{
+	font-weight: bold;
+}

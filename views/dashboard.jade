@@ -1,0 +1,18 @@
+extends base
+block vars
+ -var title = "dashbord"
+block scripts
+ link(rel="stylesheet" type="text/css" href="stylesheets/dashboard.css")
+block login
+ a(href="/logout" class="logout") Logout
+block content 
+ div(class= 'dashboard')
+  h3 WELCOME ............: #{name}
+  h3 My Topics:
+  div(class="data")
+   ul
+    if topics
+     each topic in topics
+      a(href="/topic/#{topic.id}") 
+       li #{topic.name}
+   button(onclick="window.location.href = '/topics'") Topics

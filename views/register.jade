@@ -1,0 +1,25 @@
+extends base
+block vars
+ -var title ="Register"
+block login
+ a(href="/" class="home") Home
+block content
+  link(rel="stylesheet" type="text/css" href="stylesheets/registration.css")
+  h1 Register your account
+  if error
+   div(class="error") Error: #{error}
+  form(action="/register" method="POST")
+   div(class="objects")
+     table
+      tr
+       td
+        input(class="txtbox" type="text" name="name" required placeholder="Name")
+      tr  
+       td
+        input(class="txtbox" type="email" name="email" required placeholder="Email")
+      tr
+       td
+        input( class="txtbox" type="password" name="password" required placeholder="Password")
+      tr
+       td
+        input(type="submit" value="Register" class="btn")

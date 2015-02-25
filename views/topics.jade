@@ -1,0 +1,38 @@
+block vars
+ -var title = 'Topics'
+
+extends base
+block login
+ a(href="/dashboard" class="logout") Dashboard 
+block content
+ link(rel="stylesheet" type="text/css" href="stylesheets/topics.css")
+ body
+   div(class="addTopic") 
+    form(action="/topics" method="post")
+     h1 Add new Topic
+     |Name : 
+     input(type="text" name="name" required)
+     br
+     br
+     |Description :
+     input(type="text" name="description" required)
+     br
+     br
+     input(type="submit" value="submit")
+     br
+     br
+   hr
+   div(class="addTopic")
+    form(action="/topics" method="get")
+     h3 Search Topics-
+     input(type="text" name="searchby")
+     input(type="submit" value="search")
+    if topics
+     each topic in topics
+      h4
+       a(href="/topic/#{topic.id}") #{topic.name}
+       br
+
+
+
+

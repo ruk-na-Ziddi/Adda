@@ -1,0 +1,43 @@
+.error{
+	color: red;
+	margin-left: 6%;
+	margin-right: 15%;
+	padding: 1%;
+}
+
+td {
+	padding-left: 12%;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+}
+
+.objects{
+	margin-top: 8%;
+	margin-left: 28%;
+	padding-left: 5%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	width:35%;
+	background-color: #F4F4E1;
+	border-spacing: 20%;
+}
+
+.btn{
+	height: 60%;
+	width: 40%;
+	font-size: 90%;
+}
+
+.txtbox{
+	height: 25px;
+	width: 260px;
+	border: 1px red medium;
+}
+
+.home{
+	float: right;
+	padding-right: 2%;
+	font-size: 150%;
+	margin-top: -3%;
+}
